@@ -1,0 +1,91 @@
+TC001
+Title: Create a Simple Form
+Preconditions: User has access to the Form Builder module and is logged in with a valid role.
+Steps:
+1. Navigate to the Form Builder module and click on the "Create New Form" button.
+2. Enter a valid form name and description.
+3. Add a text field with a label and a required checkbox.
+Expected Result: The form is successfully created and displayed in the Form Builder list.
+
+TC002
+Title: Create a Form with a Data Source
+Preconditions: User has access to the Data Source module and is logged in with a valid role.
+Steps:
+1. Navigate to the Data Source module and create a new data source with a valid connection.
+2. Navigate to the Form Builder module and create a new form.
+3. Add a data source field to the form and select the previously created data source.
+Expected Result: The form is successfully created and the data source field is populated with data.
+
+TC003
+Title: Create a Recursive Form
+Preconditions: User has access to the Form Builder module and is logged in with a valid role.
+Steps:
+1. Navigate to the Form Builder module and create a new form.
+2. Add a field that references another form in the same module.
+3. Save the form and navigate to the referenced form.
+Expected Result: The referenced form is successfully loaded and displayed.
+
+TC004
+Title: Validate Mandatory Fields
+Preconditions: User has access to the Form Builder module and is logged in with a valid role.
+Steps:
+1. Navigate to the Form Builder module and create a new form.
+2. Add a text field with a label and a required checkbox.
+3. Attempt to save the form without entering a value in the text field.
+Expected Result: The form is not saved and an error message is displayed indicating that the field is required.
+
+TC005
+Title: Test Role-Based Access Control
+Preconditions: User has access to the Form Builder module and is logged in with a valid role.
+Steps:
+1. Create a new form and add a field that is only accessible to users with a specific role.
+2. Log in with a user account that does not have the required role.
+3. Attempt to access the form and the restricted field.
+Expected Result: The form is displayed but the restricted field is not accessible.
+
+TC006
+Title: Test Data Source Behavior
+Preconditions: User has access to the Data Source module and is logged in with a valid role.
+Steps:
+1. Create a new data source with a valid connection.
+2. Navigate to the Form Builder module and create a new form.
+3. Add a data source field to the form and select the previously created data source.
+4. Attempt to save the form with an invalid data source connection.
+Expected Result: The form is not saved and an error message is displayed indicating that the data source connection is invalid.
+
+TC007
+Title: Test Corrective Actions
+Preconditions: User has access to the Activity Management module and is logged in with a valid role.
+Steps:
+1. Create a new activity with a corrective action.
+2. Navigate to the Form Builder module and create a new form.
+3. Add a field that triggers the corrective action.
+4. Save the form and attempt to trigger the corrective action.
+Expected Result: The corrective action is successfully triggered and executed.
+
+TC008
+Title: Test Views and Data Visualization
+Preconditions: User has access to the Views module and is logged in with a valid role.
+Steps:
+1. Create a new view with a valid configuration.
+2. Navigate to the Form Builder module and create a new form.
+3. Add a field that is linked to the previously created view.
+4. Save the form and attempt to view the data in the linked view.
+Expected Result: The data is successfully displayed in the linked view.
+
+TC009
+Title: Test Sharing and Access Control
+Preconditions: User has access to the Form Builder module and is logged in with a valid role.
+Steps:
+1. Create a new form and share it with a user account that does not have access to the Form Builder module.
+2. Log in with the shared user account and attempt to access the shared form.
+Expected Result: The form is not accessible to the shared user account.
+
+TC010
+Title: Test Navigation and UI Behavior
+Preconditions: User has access to the Form Builder module and is logged in with a valid role.
+Steps:
+1. Navigate to the Form Builder module and create a new form.
+2. Add multiple fields to the form and save it.
+3. Attempt to navigate to a different module while the form is still open.
+Expected Result: The form is successfully saved and the user is redirected to the desired module.

@@ -1,0 +1,117 @@
+TC001
+ISSUES:
+- The test case does not specify the daily limit amount.
+- The expected result is too vague and does not specify the exact confirmation message.
+- The test case does not account for any potential errors or exceptions.
+
+SUGGESTIONS:
+- Specify the daily limit amount in the preconditions.
+- Make the expected result more specific by including the exact confirmation message.
+- Add a step to verify that the transaction is reflected in the user's account balance.
+
+IMPROVED TEST CASE:
+
+TC001
+Title: Verify successful fund transfer within daily limit
+Preconditions: User is logged in with an active account and the daily limit is set to $1000.
+Steps:
+1. Navigate to Fund Transfer
+2. Enter beneficiary details
+3. Enter amount within daily limit ($500)
+4. Submit transaction
+5. Verify that the transaction is reflected in the user's account balance
+Expected Result: Transaction completes successfully, a confirmation message "Transaction completed successfully. Your account balance is now $1500." is shown, and the transaction is reflected in the user's account balance.
+
+TC002
+ISSUES:
+- The test case does not specify the daily limit amount.
+- The expected result is too vague and does not specify the exact error message.
+
+SUGGESTIONS:
+- Specify the daily limit amount in the preconditions.
+- Make the expected result more specific by including the exact error message.
+- Add a step to verify that the transaction is not reflected in the user's account balance.
+
+IMPROVED TEST CASE:
+
+TC002
+Title: Fund transfer exceeding daily limit
+Preconditions: User is logged in with an active account and the daily limit is set to $1000.
+Steps:
+1. Navigate to Fund Transfer
+2. Enter beneficiary details
+3. Enter amount exceeding daily limit ($1500)
+4. Submit transaction
+5. Verify that the transaction is not reflected in the user's account balance
+Expected Result: Transaction fails with error message "Daily limit exceeded. You have reached your daily limit of $1000.", and the transaction is not reflected in the user's account balance.
+
+TC003
+ISSUES:
+- The test case does not specify the invalid beneficiary details.
+- The expected result is too vague and does not specify the exact error message.
+
+SUGGESTIONS:
+- Specify the invalid beneficiary details in the steps.
+- Make the expected result more specific by including the exact error message.
+- Add a step to verify that the transaction is not reflected in the user's account balance.
+
+IMPROVED TEST CASE:
+
+TC003
+Title: Invalid beneficiary details
+Preconditions: User is logged in with an active account.
+Steps:
+1. Navigate to Fund Transfer
+2. Enter invalid beneficiary details (e.g. incorrect account number)
+3. Enter amount within daily limit ($500)
+4. Submit transaction
+5. Verify that the transaction is not reflected in the user's account balance
+Expected Result: Transaction fails with error message "Invalid beneficiary details. Please check the account number and try again.", and the transaction is not reflected in the user's account balance.
+
+TC004
+ISSUES:
+- The test case does not specify the OTP authentication failure.
+- The expected result is too vague and does not specify the exact error message.
+
+SUGGESTIONS:
+- Specify the OTP authentication failure in the steps.
+- Make the expected result more specific by including the exact error message.
+- Add a step to verify that the transaction is not reflected in the user's account balance.
+
+IMPROVED TEST CASE:
+
+TC004
+Title: OTP authentication failure
+Preconditions: User is logged in with an active account.
+Steps:
+1. Navigate to Fund Transfer
+2. Enter beneficiary details
+3. Enter amount within daily limit ($500)
+4. Fail OTP authentication (e.g. enter incorrect OTP)
+5. Submit transaction
+6. Verify that the transaction is not reflected in the user's account balance
+Expected Result: Transaction fails with error message "OTP authentication failed. Please try again.", and the transaction is not reflected in the user's account balance.
+
+TC005
+ISSUES:
+- The test case does not specify the network failure.
+- The expected result is too vague and does not specify the exact error message.
+
+SUGGESTIONS:
+- Specify the network failure in the steps.
+- Make the expected result more specific by including the exact error message.
+- Add a step to verify that the transaction is not reflected in the user's account balance.
+
+IMPROVED TEST CASE:
+
+TC005
+Title: Network failure during transaction
+Preconditions: User is logged in with an active account.
+Steps:
+1. Navigate to Fund Transfer
+2. Enter beneficiary details
+3. Enter amount within daily limit ($500)
+4. Simulate network failure (e.g. disconnect internet)
+5. Submit transaction
+6. Verify that the transaction is not reflected in the user's account balance
+Expected Result: Transaction fails with error message "Network failure. Please try again when your internet connection is stable.", and the transaction is not reflected in the user's account balance.
